@@ -20,7 +20,7 @@ function oldScrabbleScorer(word) {
  
 	  for (const pointValue in oldPointStructure) {
  
-		 if (oldPointStructure[pointValue].includes(word[i])) {
+		 if (oldPointStructure[pointValue].includes(word[i])){
 			letterPoints += `Points for '${word[i]}': ${pointValue}\n`
 		 }
  
@@ -33,7 +33,10 @@ function oldScrabbleScorer(word) {
 // don't change the names or your program won't work as expected. //
 
 function initialPrompt() {
-   console.log("Let's play some scrabble! Enter a word:");
+   console.log("Let's play some scrabble!");
+   let wordToScore = input.question("Enter a word to score: ");
+   wordToScore = wordToScore.toUpperCase();
+   console.log(oldScrabbleScorer(wordToScore));
 };
 
 let newPointStructure;
@@ -46,7 +49,7 @@ let scrabbleScorer;
 
 const scoringAlgorithms = [];
 
-function scorerPrompt() {}
+function scorerPrompt() {};
 
 function transform() {};
 
